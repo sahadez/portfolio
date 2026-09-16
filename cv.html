@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV — Sahade Zongo</title>
+<meta name="description" content="CV de Sahade Zongo — Chef de Projet ERP & Développeur Full-Stack.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&display=swap');
+
+  :root{
+    --paper:#ffffff;
+    --ground:#eceae4;
+    --ink:#1c2530;
+    --ink-soft:#3b4654;
+    --muted:#6a7480;
+    --hair:#e4e0d8;
+    --panel:#1b2531;
+    --panel-2:#243040;
+    --panel-ink:#e9ecf0;
+    --panel-muted:#9aa6b4;
+    --accent:#c05a2b;
+    --accent-soft:#e9d4c6;
+    --chip:#f4f1eb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Archivo", "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+
+  .page{
+    max-width:860px;
+    margin:24px auto;
+    background:var(--paper);
+    display:grid;
+    grid-template-columns:290px 1fr;
+    box-shadow:0 18px 50px rgba(20,25,35,.18);
+    overflow:hidden;
+  }
+
+  .side{
+    background:var(--panel);
+    color:var(--panel-ink);
+    padding:32px 26px 40px;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+  }
+  .avatar{
+    width:132px;height:132px;border-radius:50%;
+    margin:2px auto 4px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(150deg,var(--panel-2),#33445a);
+    border:3px solid rgba(192,90,43,.85);
+    overflow:hidden;
+    position:relative;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+  .avatar .mono{
+    font-family:"Fraunces",serif;font-weight:600;font-size:46px;
+    color:#f0e7df;letter-spacing:1px;
+  }
+
+  .s-block h3{
+    font-family:"Archivo",sans-serif;
+    font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent-soft);
+    margin:0 0 12px;
+    padding-bottom:7px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .contact{display:flex;flex-direction:column;gap:11px;font-size:12.5px;}
+  .contact .row{display:flex;gap:10px;align-items:flex-start;line-height:1.35;}
+  .contact .ic{color:var(--accent);flex:0 0 16px;margin-top:1px;}
+  .contact a{color:var(--panel-ink);text-decoration:none;word-break:break-word;}
+  .contact .lab{display:block;color:var(--panel-muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em;}
+
+  .skills{display:flex;flex-direction:column;gap:15px;}
+  .skgrp .t{font-size:12px;font-weight:600;color:#fff;margin-bottom:6px;}
+  .tags{display:flex;flex-wrap:wrap;gap:5px;}
+  .tag{
+    font-size:10.5px;line-height:1;padding:5px 8px;border-radius:5px;
+    background:rgba(255,255,255,.07);color:var(--panel-ink);
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .langs{display:flex;flex-direction:column;gap:9px;}
+  .lang{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;}
+  .lang .lv{color:var(--panel-muted);font-size:11px;}
+  .dots{display:flex;gap:3px;}
+  .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18);display:block;}
+  .dots i.on{background:var(--accent);}
+
+  .main{padding:34px 34px 40px;min-width:0;}
+  .head{margin-bottom:22px;}
+  .name{
+    font-family:"Fraunces",serif;font-weight:600;
+    font-size:39px;line-height:1.02;letter-spacing:-.01em;
+    margin:0;color:var(--ink);text-wrap:balance;
+  }
+  .role{
+    font-size:15px;font-weight:600;color:var(--accent);
+    margin:9px 0 6px;letter-spacing:.01em;
+  }
+  .kicker{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:.02em;}
+
+  section{margin-top:24px;}
+  .sec-h{display:flex;align-items:center;gap:11px;margin:0 0 14px;}
+  .sec-h h2{
+    font-family:"Archivo",sans-serif;
+    font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--ink);margin:0;white-space:nowrap;
+  }
+  .sec-h .line{height:1px;background:var(--hair);flex:1;}
+
+  .lead{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+  .tl{display:flex;flex-direction:column;gap:17px;}
+  .item{position:relative;padding-left:20px;}
+  .item::before{content:"";position:absolute;left:0;top:5px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--accent);}
+  .item::after{content:"";position:absolute;left:4px;top:16px;bottom:-17px;width:1px;background:var(--hair);}
+  .item:last-child::after{display:none;}
+  .it-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap;}
+  .it-title{font-size:13.5px;font-weight:700;color:var(--ink);}
+  .it-org{font-size:12.5px;color:var(--accent);font-weight:600;}
+  .it-date{font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .it-place{font-size:11px;color:var(--muted);margin-top:1px;}
+  .it-body{margin:7px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px;}
+  .it-body li{font-size:12px;color:var(--ink-soft);line-height:1.45;padding-left:13px;position:relative;}
+  .it-body li::before{content:"–";position:absolute;left:0;color:var(--accent);}
+
+  .proj{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+  .card{border:1px solid var(--hair);border-radius:9px;padding:13px 14px;display:flex;flex-direction:column;gap:6px;background:#fdfcfa;}
+  .card .c-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}
+  .card .c-name{font-size:13px;font-weight:700;color:var(--ink);}
+  .card .c-year{font-size:10px;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums;}
+  .card .c-desc{font-size:11.5px;color:var(--ink-soft);line-height:1.45;}
+  .card .c-stack{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px;}
+  .card .c-stack span{font-size:9.5px;color:var(--muted);background:var(--chip);padding:3px 6px;border-radius:4px;letter-spacing:.02em;}
+  .badge-live{font-size:9px;font-weight:700;color:#2f7d4f;background:#e4f2e9;padding:2px 6px;border-radius:20px;letter-spacing:.04em;text-transform:uppercase;}
+
+  .edu-item{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--hair);flex-wrap:wrap;}
+  .edu-item:last-child{border-bottom:none;}
+  .edu-l .t{font-size:13px;font-weight:700;color:var(--ink);}
+  .edu-l .s{font-size:11.5px;color:var(--muted);}
+  .award{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--ink-soft);line-height:1.45;}
+  .award .st{color:var(--accent);font-size:15px;line-height:1;flex:0 0 auto;}
+
+  .todo{color:#b26a1f;font-style:italic;}
+
+  .printbtn{
+    position:fixed;right:20px;bottom:20px;z-index:20;
+    font-family:"Archivo",sans-serif;font-weight:600;font-size:14px;
+    padding:12px 20px;border-radius:30px;border:none;cursor:pointer;
+    background:var(--accent);color:#fff;box-shadow:0 8px 24px rgba(192,90,43,.4);
+  }
+  .printbtn:hover{filter:brightness(1.06);}
+  .backlink{position:fixed;left:20px;bottom:20px;z-index:20;font-size:13px;color:var(--ink-soft);background:#fff;padding:10px 16px;border-radius:30px;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+
+  @media (max-width:640px){
+    .page{grid-template-columns:1fr;margin:0;box-shadow:none;}
+    .proj{grid-template-columns:1fr;}
+    .name{font-size:32px;}
+    .main{padding:26px 20px 32px;}
+  }
+
+  @media print{
+    @page{size:A4;margin:0;}
+    body{background:#fff;}
+    .page{margin:0;max-width:none;box-shadow:none;width:100%;}
+    .side,.card,.badge-live{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .item,.card{break-inside:avoid;}
+    .printbtn,.backlink{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<a class="backlink" href="index.html">← Portfolio</a>
+<button class="printbtn" onclick="window.print()">📄 Imprimer / PDF</button>
+
+<div class="page">
+  <aside class="side">
+    <div>
+      <div class="avatar">
+        <!-- Remplacer par la photo : <img src="assets/photo.jpg" alt="Sahade Zongo"> -->
+        <span class="mono">SZ</span>
+      </div>
+    </div>
+
+    <div class="s-block">
+      <h3>Contact</h3>
+      <div class="contact">
+        <div class="row"><span class="ic">✉</span><span><span class="lab">Email</span><a href="mailto:sahadezongo@gmail.com">sahadezongo@gmail.com</a></span></div>
+        <div class="row"><span class="ic">☏</span><span><span class="lab">Téléphone</span>+33 7 53 36 61 61</span></div>
+        <div class="row"><span class="ic">in</span><span><span class="lab">LinkedIn</span><a href="https://www.linkedin.com/in/sahade-zongo">in/sahade-zongo</a></span></div>
+        <div class="row"><span class="ic">⌂</span><span><span class="lab">Localisation</span>Meyzieu · Lyon, France</span></div>
+        <div class="row"><span class="ic">◎</span><span><span class="lab">Mobilité</span>France · Télétravail</span></div>
+      </div>
+    </div>
+
+    <div class="s-block">
+      <h3>Compétences</h3>
+      <div class="skills">
+        <div class="skgrp">
+          <div class="t">Développement</div>
+          <div class="tags">
+            <span class="tag">PHP / PDO</span><span class="tag">Flutter / Dart</span>
+            <span class="tag">TypeScript</span><span class="tag">Node.js / NestJS</span>
+            <span class="tag">React.js</span><span class="tag">SQL</span>
+            <span class="tag">Tailwind CSS</span><span class="tag">PWA</span>
+          </div>
+        </div>
+        <div class="skgrp">
+          <div class="t">Données &amp; BI</div>
+          <div class="tags">
+            <span class="tag">MySQL / MariaDB</span><span class="tag">PostgreSQL</span>
+            <span class="tag">Amazon QuickSight</span><span class="tag">Power BI</span>
+          </div>
+        </div>
+        <div class="skgrp">
+          <div class="t">ERP &amp; métier</div>
+          <div class="tags">
+            <span class="tag">Sylob (ERP)</span><span class="tag">EDI</span>
+            <span class="tag">Facturation électronique</span><span class="tag">CRM</span>
+          </div>
+        </div>
+        <div class="skgrp">
+          <div class="t">Infra &amp; sécurité</div>
+          <div class="tags">
+            <span class="tag">Linux / Nginx</span><span class="tag">VPS OVH</span>
+            <span class="tag">Git</span><span class="tag">CI / déploiement</span>
+            <span class="tag">Sécurité web</span>
+          </div>
+        </div>
+        <div class="skgrp">
+          <div class="t">IA &amp; paiement</div>
+          <div class="tags">
+            <span class="tag">LLM (Groq / Gemini)</span><span class="tag">PayPal</span>
+            <span class="tag">Mobile Money</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s-block">
+      <h3>Langues</h3>
+      <div class="langs">
+        <div class="lang"><span>Français</span><span class="lv">Langue maternelle</span></div>
+        <div class="lang"><span>Anglais</span><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+      </div>
+    </div>
+
+    <div class="s-block">
+      <h3>Distinction</h3>
+      <div class="award">
+        <span class="st">★</span>
+        <span><strong>1<sup>re</sup> place — Concours national NTIC (ANPTIC)</strong>, Burkina Faso. Projet EQUITERROIR, lauréat d'un financement.</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="head">
+      <h1 class="name">Sahade Zongo</h1>
+      <div class="role">Chef de Projet ERP &amp; Développeur Full-Stack</div>
+      <div class="kicker">PHP · Flutter · Business Intelligence · IA appliquée — ERP, CRM &amp; facturation électronique</div>
+    </header>
+
+    <section>
+      <div class="sec-h"><h2>Profil</h2><span class="line"></span></div>
+      <p class="lead">Chef de projet ERP et développeur full-stack, je pilote des systèmes de gestion (Sylob) et des solutions décisionnelles (Amazon QuickSight, Power BI), et je conçois des applications web et mobiles de bout en bout — de la modélisation des données au déploiement en production sur VPS. Solide sur PHP/MySQL et Flutter/NestJS, je m'attache à livrer des produits réellement utilisés, sécurisés et maintenables, avec un intérêt marqué pour l'IA appliquée et la facturation électronique.</p>
+    </section>
+
+    <section>
+      <div class="sec-h"><h2>Expérience</h2><span class="line"></span></div>
+      <div class="tl">
+        <div class="item">
+          <div class="it-top">
+            <div><span class="it-title">Chef de Projet ERP</span> · <span class="it-org">Fonderie Moulaire — TECFAZ</span></div>
+            <span class="it-date">Nov. 2024 — Auj. · CDI</span>
+          </div>
+          <div class="it-place">Meyzieu, France</div>
+          <ul class="it-body">
+            <li>Pilotage de l'ERP <strong>Sylob</strong> et de la plateforme décisionnelle <strong>Amazon QuickSight</strong> (tableaux de bord, suivi de production et de performance).</li>
+            <li>Conception et développement d'un <strong>logiciel interne de devis</strong> (PHP/MySQL) : calculateur de prix pour 3 procédés de fonderie (gravité, injection Zamak, injection aluminium).</li>
+            <li>Gestion fine des rôles &amp; marges, acceptation de devis en ligne par le client, impression PDF, historique de versions et journal d'audit.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="it-top">
+            <div><span class="it-title">Data Analyst</span> · <span class="it-org">ULTIMA Mobility</span></div>
+            <span class="it-date">2022 — 2024 · Alternance</span>
+          </div>
+          <div class="it-place">France</div>
+          <ul class="it-body">
+            <li>Analyse de données, reporting et construction de tableaux de bord décisionnels.</li>
+            <li>Valorisation de la donnée métier au service du pilotage opérationnel.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="it-top">
+            <div><span class="it-title">Développeur ERP — Sylob / EDI</span> · <span class="it-org">Stage</span></div>
+            <span class="it-date todo">Période à compléter</span>
+          </div>
+          <ul class="it-body"><li>Intégration et paramétrage ERP, échanges de données informatisés (EDI).</li></ul>
+        </div>
+        <div class="item">
+          <div class="it-top">
+            <div><span class="it-title">Stage — Ingénierie réseau</span> · <span class="it-org">Moov Africa</span></div>
+            <span class="it-date todo">Période à compléter</span>
+          </div>
+          <div class="it-place">Burkina Faso</div>
+          <ul class="it-body"><li>Exploitation et support d'infrastructures réseau télécom.</li></ul>
+        </div>
+        <div class="item">
+          <div class="it-top">
+            <div><span class="it-title">Co-fondateur</span> · <span class="it-org">EQUITERROIR</span></div>
+            <span class="it-date todo">Période à compléter</span>
+          </div>
+          <ul class="it-body"><li>Projet lauréat de la <strong>1<sup>re</sup> place au concours national NTIC (ANPTIC)</strong> et d'un financement.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-h"><h2>Projets clés</h2><span class="line"></span></div>
+      <div class="proj">
+        <div class="card">
+          <div class="c-top"><span class="c-name">FasoAnnonce</span><span class="badge-live">En prod</span></div>
+          <div class="c-desc">Plateforme de petites annonces en production. Design system, sécurité (CSRF, anti-RCE), assistant IA (recherche vocale/image, modération), paiements PayPal &amp; Mobile Money, PWA, SEO, emailing automatisé.</div>
+          <div class="c-stack"><span>PHP</span><span>MySQL</span><span>VPS OVH</span><span>Groq IA</span></div>
+        </div>
+        <div class="card">
+          <div class="c-top"><span class="c-name">NoorMap</span><span class="badge-live">En prod</span></div>
+          <div class="c-desc">Application mobile de spots &amp; événements (Ouagadougou). Carte temps réel, réservations par QR, chat WebSocket, gamification, notifications push. Backend et app déployés.</div>
+          <div class="c-stack"><span>Flutter</span><span>NestJS</span><span>PostgreSQL</span><span>Firebase</span></div>
+        </div>
+        <div class="card">
+          <div class="c-top"><span class="c-name">koyoEshop / Nutrifor</span><span class="c-year">2026</span></div>
+          <div class="c-desc">E-commerce sur-mesure (agence Com'mark). Points relais géolocalisés, QR de retrait à usage unique (HMAC), régie publicitaire, programme de fidélité, back-office complet.</div>
+          <div class="c-stack"><span>PHP MVC</span><span>MySQL</span><span>Haversine</span></div>
+        </div>
+        <div class="card">
+          <div class="c-top"><span class="c-name">SyaVibes</span><span class="c-year">Resp. IT</span></div>
+          <div class="c-desc">Plateforme culturelle africaine : événements, billetterie et web TV. Responsable technique et développement.</div>
+          <div class="c-stack"><span>PHP</span><span>MySQL</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-h"><h2>Formation</h2><span class="line"></span></div>
+      <div class="edu-item">
+        <div class="edu-l">
+          <div class="t">Master — Intelligence Artificielle &amp; Big Data</div>
+          <div class="s">ESGI, Lyon — France</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-l">
+          <div class="t">Licence — Génie Informatique, option Programmation</div>
+          <div class="s">Université Aube Nouvelle — Burkina Faso</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-h"><h2>Certifications</h2><span class="line"></span></div>
+      <div class="edu-item">
+        <div class="edu-l">
+          <div class="t"><span class="todo">Liste des certifications à compléter (intitulé · organisme · année)</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
